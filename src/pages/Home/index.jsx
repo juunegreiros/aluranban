@@ -1,9 +1,13 @@
 import React from 'react';
 import Page from '../../components/Page';
+import LoginForm from '../../containers/LoginForm';
+import Container from './style';
 
 const Home = () => (
   <Page>
-    <h1>Home :)</h1>
+    <Container>
+      <LoginForm />
+    </Container>
   </Page>
 );
 
