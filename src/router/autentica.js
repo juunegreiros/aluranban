@@ -1,9 +1,9 @@
-import api from '../api';
+import apiUsuarios from '../api/usuarios';
 
 const autentica = {
   estaAutenticado: false,
   autenticar: function (user) {
-    return api.buscaUsuarios().then((usuarios) => {
+    return apiUsuarios.busca().then((usuarios) => {
       const usuarioEstaCadastrado = usuarios.filter(
         (usuario) => usuario.nome === user,
       );

@@ -3,11 +3,11 @@ import propTypes from 'prop-types';
 
 import { FieldWrapper, Label, Input } from './style';
 
-const FormField = ({ label, onChange, value, type }) => (
+const FormField = ({ label, name, onChange, value, type }) => (
   <FieldWrapper>
-    <Label>{label}</Label>
+    <Label htmlFor={name}>{label}</Label>
 
-    <Input type={type} value={value} onChange={onChange} />
+    <Input type={type} name={name} value={value} onChange={onChange} />
   </FieldWrapper>
 );
 
