@@ -25,7 +25,7 @@ const EstiloBase = createGlobalStyle`
 
   body {
     background-color: var(--white);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   a {

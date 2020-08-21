@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from '../../components/Page';
-import LoginForm from '../../containers/LoginForm';
+import LoginForm from '../../components/LoginForm';
 import Container from './style';
 
 const Home = () => (
