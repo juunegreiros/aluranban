@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import KanbanWrapper from './style';
 import Lista from './Lista';
-import api from '../../api';
 
-const Kanban = () => {
-  const [tarefas, setTarefas] = useState([]);
-  api.buscaTarefas().then((dados) => {
-    setTarefas(dados);
-  });
-
+const Kanban = ({ tarefas }) => {
   return (
     <KanbanWrapper>
       <Lista tarefas={tarefas} tipo="backlog" titulo="Backlog" />

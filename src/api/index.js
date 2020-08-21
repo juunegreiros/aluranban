@@ -16,7 +16,15 @@ const conecta = (uri) =>
 
 const buscaUsuarios = () => conecta(`${USUARIOS_URI}?_embed=tarefas`);
 
-const buscaTarefas = () => conecta(`${TAREFAS_URI}?_expand=usuario`);
+const buscaTarefas = () =>
+  fetch(`${TAREFAS_URI}?_expand=usuario`).then(async (resposta) => {
+    if (resposta.ok) {
+      const dados = await resposta.json();
+      return dados;
+    }
+
+    throw new Error(resposta);
+  });
 
 const buscaTarefasDoUsuario = (id) => conecta(`${USUARIOS_URI}/${id}/tarefas`);
 
