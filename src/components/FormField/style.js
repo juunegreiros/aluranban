@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
 export const FieldWrapper = styled.div`
-  background-color: var(--primary);
-  border: 2px solid var(--primary);
-  border-radius: 4px;
-  color: var(--white);
   margin-bottom: 1rem;
   margin-top: 1rem;
   position: relative;

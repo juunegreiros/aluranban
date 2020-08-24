@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import FormField from '../../components/FormField';
 
 export const FormWrapper = styled.form`
   align-items: center;
@@ -16,6 +17,13 @@ export const Titulo = styled.h1`
   font-weight: normal;
   margin-top: 1rem;
   margin-bottom: 1rem;
+`;
+
+export const LoginFormField = styled(FormField)`
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  color: var(--white);
 `;
 
 export const Button = styled.button`

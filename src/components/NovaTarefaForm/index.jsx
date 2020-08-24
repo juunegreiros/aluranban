@@ -2,10 +2,11 @@ import React from 'react';
 import { Form } from './style';
 import FormField from '../FormField';
 import useForm from '../../hooks/useForm';
+import tarefasApi from '../../api/tarefas';
 
-const NovaTarefaForm = ({ cadastrarTarefa }) => {
+const NovaTarefaForm = ({ cadastraTarefa }) => {
   const dadosIniciais = {
-    usuarioID: 2,
+    usuarioId: 2,
     quadro: '',
     texto: '',
   };
@@ -13,11 +14,25 @@ const NovaTarefaForm = ({ cadastrarTarefa }) => {
 
   const handleSubmit = (evento) => {
     evento.preventDefault();
+    cadastraTarefa(valores);
   };
+
   return (
-    <Form>
-      <FormField label="quadro" name="quadro" />
-      <FormField label="texto" name="texto" />
+    <Form onSubmit={handleSubmit}>
+      <FormField
+        label="quadro"
+        name="quadro"
+        value={valores.quadro}
+        onChange={handleChange}
+      />
+
+      <FormField
+        label="texto"
+        name="texto"
+        value={valores.texto}
+        onChange={handleChange}
+      />
+
       <button>Cadastrar</button>
     </Form>
   );

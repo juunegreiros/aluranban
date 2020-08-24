@@ -10,12 +10,11 @@ const Board = () => {
 
   useEffect(() => {
     apiTarefas.busca().then((dados) => setTarefas(dados));
-  }, []);
+  }, [tarefas]);
 
   const cadastraTarefa = (tarefa) => {
-    apiTarefas.cadastra(tarefa).then(() => {
-      setTarefas([...tarefas, tarefa]);
-    });
+    setTarefas([]);
+    apiTarefas.cadastra(tarefa);
   };
 
   return (

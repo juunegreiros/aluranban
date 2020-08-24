@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { FormWrapper, Button, Titulo } from './style';
+import { FormWrapper, Button, Titulo, LoginFormField } from './style';
 import useForm from '../../hooks/useForm';
-import FormField from '../../components/FormField';
 import autentica from '../../router/autentica';
 
 const LoginForm = () => {
@@ -23,7 +22,7 @@ const LoginForm = () => {
     <FormWrapper onSubmit={handleSubmit}>
       <Titulo>Login</Titulo>
 
-      <FormField
+      <LoginFormField
         label="usuário"
         name="usuario"
         value={valores.usuario}
